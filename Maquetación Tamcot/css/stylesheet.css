@@ -1,0 +1,737 @@
+
+@import url(http://fonts.googleapis.com/css?family=Dosis:300,500,700);
+@import url(http://fonts.googleapis.com/css?family=Raleway:700,500,300);
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+.container{
+  width: 970px !important;
+}
+html,
+nav,
+body {
+  height: 100%;
+  /*Para que funcione el Footer adhesivo 
+  el html y el body no pueden llevar padding ni margin*/
+}
+
+/* Empuja el contenido hacia abajo */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Valor negativo de la altura del footer */
+  margin: 0 auto -400px;
+  /* Padding superior de la altura del footer */
+  padding: 0 0 400px;
+}
+
+/* Tamaño del footer */
+#footer {
+  
+  height: 370px;
+  background-color: #191919;
+}
+
+#foot {
+  
+  height: 450px;
+  background-color: #191919;
+}
+
+#wrap > .footerCont {
+  padding: 400px 15px 0;
+}
+.container .credit {
+  margin: 20px 0;
+}
+
+#footer > .footerCont {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+code {
+  font-size: 80%;
+}
+
+
+/* BARRA DE NAVEGACION */
+.navbar-default{
+   text-align:center;
+   background-color:#000;
+   background-color:#ecf0f1;
+}
+
+.navbar-brand{
+  height:90px;
+}
+.nav > li {
+  position: relative; 
+  font-family: "Montserrat", Arial, serif;
+  font-weight: 700; 
+  font-size: 18px;
+}
+.nav > li > a {
+  position: relative;
+  padding: 30px 15px;
+}
+.active{
+  background-color: #2980b9 !important;
+  padding-top: 5px;
+}
+.rojoActive{
+  background-color: #c0392b !important;
+}
+
+.azulActive{
+  background-color: #1abc9c !important;
+}
+
+.verdeActive{
+  background-color: #2ecc71 !important;
+}
+
+.pull-left{
+  margin: 5px 10px 0 -15px;
+}
+.navbar-btn {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.navbar-text {
+  float: left;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.form-control{
+  width:220px;
+  margin:0 auto;
+  font-family: "Raleway", Arial, serif;
+  font-weight: 500; 
+  font-size: 16px;
+}
+
+
+
+input[type=text]{
+  color:#666666;
+}
+
+.input-sm{  
+  padding:6px 15px 6px 15px;
+  margin:3px; 
+  background-color: #bdc3c7;
+  border-radius:15px; 
+  -moz-border-radius:15px; 
+  -webkit-border-radius:15px; 
+}
+
+.glyphicon{
+  color:#ecf0f1;
+}
+
+.input-sm input[type=text]{
+  background-color:#bdc3c7;
+  color:#505358;
+}
+
+.btn-default{
+  padding: 5px 8px;
+  background-color:#7f8c8d;
+  border-radius:40px; 
+  border:0;
+  -moz-border-radius:40px; 
+  -webkit-border-radius:40px; 
+}
+
+.btn-default:hover, .btn-default:focus {
+  background-color:#404747;
+}
+
+.buscar{
+  margin: 0 36px 0 -36px;
+}
+
+.navbar-form {
+  text-decoration: none;
+  padding: 20px 15px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  position: relative; 
+  font-family: "Montserrat", Arial, serif;
+  font-weight: 700; 
+  font-size: 18px;
+}
+
+
+/* Boton de ir al TOP */
+
+.scrollup{
+    width:40px;
+    height:40px;
+    opacity:0.3;
+    position:fixed;
+    bottom:50px;
+    right:100px;
+    display:none;
+    text-indent:-9999px;
+    background: url(../images/icon_top.png) no-repeat;
+}
+
+
+/* Videos */
+
+.fondoVideos{
+  width: 100%;
+    height: 580px;
+    background-image: url(../images/fondoAzul.png);
+    background-position: 0px;
+    background-repeat: repeat;
+    -webkit-animation: fondo 20s infinite linear;
+       -moz-animation: fondo 20s infinite linear;
+         -o-animation: fondo 20s infinite linear;
+            animation: fondo 20s infinite linear;
+}
+
+.fondoVideosRojo{
+  width: 100%;
+    height: 580px;
+    background-image: url(../images/fondoRojo.png);
+    background-position: 0px;
+    background-repeat: repeat;
+    -webkit-animation: fondo 20s infinite linear;
+       -moz-animation: fondo 20s infinite linear;
+         -o-animation: fondo 20s infinite linear;
+            animation: fondo 20s infinite linear;
+}
+
+
+.fondoContactoCian{
+  width: 100%;
+    height: 580px;
+    background-image: url(../images/fondoCian.png);
+    background-position: 0px;
+    background-repeat: repeat;
+    -webkit-animation: fondo 20s infinite linear;
+       -moz-animation: fondo 20s infinite linear;
+         -o-animation: fondo 20s infinite linear;
+            animation: fondo 20s infinite linear;
+}
+
+
+@-webkit-keyframes fondo {
+  0%   { background-position: 0px 0px; }
+  100% { background-position: 200px 300px; } 
+}
+@-moz-keyframes fondo {
+  0%   { background-position: 0px 0px; }
+  100% { background-position: 200px 300px; }
+}
+@-o-keyframes fondo {
+  0%   { background-position: 0px 0px;}
+  100% { background-position: 200px 300px; }
+}
+@keyframes fondo {
+  0%   { background-position: 0px 0px; }
+  100% { background-position: 200px 300px; }
+}
+
+.videoBanner{
+
+  margin: 0 auto;
+
+  width: 960px !important;
+  overflow: visible;
+}
+
+.tint {
+  position: relative;
+  float: left;
+  cursor: pointer;
+}
+
+.tint:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: -4px;
+  background: rgba(0,0,0, 0.3);
+  -moz-transition: all .3s linear;
+  -webkit-transition: all .3s linear;
+  -ms-transition: all .3s linear;
+  -o-transition: all .3s linear;
+  transition: all .3s linear;
+  }
+
+.tint:hover:before {
+  background: none;
+  display: none;
+
+ }
+
+ .tituloVideos{
+  z-index: 100;
+  position: absolute;
+  color: white;
+  font-family: "Montserrat", Arial, serif;
+  font-weight: 700; 
+  font-size: 37px;
+  -ms-transform:rotate(270deg); /* IE 9 */
+  -moz-transform:rotate(270deg); /* Firefox */
+  -webkit-transform:rotate(270deg); /* Safari and Chrome */
+  -o-transform:rotate(270deg); /* Opera */
+ }
+
+ .lanzamientos{
+  left: -125px;
+  top: 385px;
+
+ }
+
+ .textoVideos {
+  visibility: visible;
+  color: white;
+  font-family:"Raleway";
+  font-weight: 500; 
+  font-size: 16px;
+  background-color: rgba(0,0,0,0.6); 
+  position: absolute;
+  top: 430px;
+  left: 50px;
+  width: 186px;
+  height: 151px;
+}
+
+.lanzamientostxt{
+  padding: 20px 4px 20px 0px;
+}
+
+.ofertas{
+  left: -60px;
+  top: 450px;
+}
+
+.ofertastxt{
+  padding:24px 0px 16px;
+}
+
+.destacados{
+  left: -105px;
+  top: 409px;
+
+ }
+
+.destacadostxt{
+  padding: 24px 6px 16px 0px;
+}
+
+.preventa{
+  left: -73px;
+  top: 437px;
+ }
+
+.preventatxt{
+  padding: 24px 10px 16px 0px;
+  margin: 0px 0px 0px 3px;
+}
+
+.tint:hover .textoVideos{
+   visibility: hidden;
+}
+
+
+video{
+ display:inline-block;
+ margin-right: -4px;
+ margin-top: 80px;
+ margin-bottom: -5px;
+}
+
+
+.lanzamientoIcono, .ofertasIcono, .destacadosIcono, .preventaIcono{
+  padding: 0px 0 20px 0;
+}
+
+#seccionLanzamientos, #seccionOfertas, #seccionDestacados, #seccionPreventa {
+  color: #ecf0f1;
+  padding: 60px 0;
+  background-color: #333333;
+  height: 130px;
+}
+
+.Articulos{
+  padding: 30px 0 90px 0;
+  background-image: url("../images/fondoBlanco.png");
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+
+.atras, .siguiente {
+  margin: 80px 0;
+}
+
+h2 {
+  font-family: "Dosis", Arial, serif;
+  font-weight: 500; 
+  font-size: 24px;
+}
+
+ h6{
+color: red;
+text-align: center;
+text-decoration: none;
+font-size: 26px;
+  font-family: "Raleway", Arial, serif;
+  font-weight: 600; 
+
+}
+
+   section{
+
+    padding: 100px;
+
+   }
+
+
+#bot  {
+ margin : auto;
+  padding: 10px;
+ border-radius: 10px;
+  width: 40% ;
+  background-color: #333333;
+}
+
+
+.regLogo{
+width: 50%;
+height: 50%;
+margin-left: 165px;
+padding-bottom:50px ;
+}
+ 
+
+.tituloJuego{
+  font-family: "Montserrat", Arial, serif;
+  font-weight: 400; 
+  font-size: 16px;
+  text-align: center;  
+}
+
+.precio{
+  font-family: "Raleway", Arial, serif;
+  font-weight: 700; 
+  font-size: 22px;
+  text-align: left;
+  color: #2980b9;
+}
+.precioDescuento{
+  text-decoration:line-through;
+  font-size: 16px;
+  margin: 10px 0 -10px 0;
+  color: #666666;
+}
+
+.fecha, .consola {
+  margin-top: 0;
+  font-family: "Montserrat", Arial, serif;
+  font-weight: 400; 
+  font-size: 13px;
+  text-align: left;
+}
+
+#battlefield {
+  color: #ecf0f1;
+  background-color: #333333;
+  background-image: url("../images/fondoBattle.jpg");
+ /* background-attachment: fixed;*/
+  background-position: center top;
+  width: 100%;
+  height: 590px;
+  padding: 130px 0 0 25px;
+}
+
+#tituloBattle, #descripcionBattle{
+  font-family: "Montserrat", Arial, serif;
+  font-weight: 700; 
+  font-size: 24px;
+  text-align: left;
+}
+
+#descripcionBattle{
+  font-size: 16px;
+}
+
+.masInfo {
+  background-color:#e74d3c;
+  -webkit-border-top-left-radius:3px;
+  -moz-border-radius-topleft:3px;
+  border-top-left-radius:3px;
+  -webkit-border-top-right-radius:3px;
+  -moz-border-radius-topright:3px;
+  border-top-right-radius:3px;
+  -webkit-border-bottom-right-radius:3px;
+  -moz-border-radius-bottomright:3px;
+  border-bottom-right-radius:3px;
+  -webkit-border-bottom-left-radius:3px;
+  -moz-border-radius-bottomleft:3px;
+  border-bottom-left-radius:3px;
+  text-indent:0;
+  display:inline-block;
+  color:#ffffff;
+  font-family:"Raleway", Arial, serif;
+  font-size:13px;
+  font-weight:bold;
+  font-style:normal;
+  height:20px;
+  line-height:20px;
+  width:70px;
+  text-decoration:none;
+  text-align:center;
+  margin: 0 0 140px 200px;
+}.masInfo:hover {
+  background-color:#db5b4f;
+  color:#ffffff;
+  text-decoration: none;
+}.masInfo:active {
+  position:relative;
+  top:1px;
+}
+
+.anuncioBattle {
+  background-color: rgba(0,0,0,0.5);
+  margin-top: -130px;
+  height: 590px;
+  padding-left: 25px;
+}
+
+.videoBattle{
+  text-shadow:1px 1px #0f0f0f;
+  margin-top: 225px;
+}
+
+.logofooter{
+  margin-top: 130px;
+}
+
+.elementofooter{
+  margin-bottom: 20px;
+}
+
+#infoContacto{
+    list-style-type: none;
+    padding:0; 
+    margin:0px;
+    font-family:"Raleway", Arial, serif;
+    font-size:13px;
+    font-weight: 500;
+    color: white !important;
+}
+
+#infoContactoDirecciones{
+  list-style-type: none;
+  padding-left:25px; 
+  margin:-20px 0 0 0;
+}
+
+.iconofooter{
+  margin-right: 10px;
+
+}
+
+.titulofooter{
+  margin: 40px 0 20px 0;
+  font-family: "Montserrat", Arial, serif;
+  font-weight: 700; 
+  font-size: 24px;
+  color: white;
+}
+
+/*//////////////////////////////VIDEOJUEGOS//////////////////////////////*/
+
+#seccionVideojuegos{
+  color: #ecf0f1;
+  padding: 60px 0;
+  background-color: #333333;
+  height: 130px; 
+}
+
+.videojuegosIcono{
+  padding: 0px 0 20px 0;
+}
+
+.videojuegos{
+  padding: 30px 0 90px 0;
+  background-image: url("../images/fondoBlanco.png");
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+
+.tituloNuevosJuegos{
+  text-align: center;
+  font-family: "Montserrat", Arial, serif;
+  font-weight: 400; 
+  font-size: 24px;
+  color: #d81f1f;
+  text-shadow: -1px -1px rgba(255,255,255,0.7);
+}
+
+.fechasJuegos{
+  font-family: "Dosis", Arial, serif;
+  font-weight: 300; 
+  font-size: 24px;
+  color: #333333;
+  text-shadow: -1px -1px rgba(255,255,255,0.7);
+}
+
+.tituloFiltros{
+  text-align: right;
+  font-family: "Dosis", Arial, serif;
+  font-weight: 300; 
+  font-size: 24px;
+  color: #d81f1f;
+  text-shadow: -1px -1px rgba(255,255,255,0.7);
+  margin: 25px 0 0 0;
+}
+
+.filtros {
+  margin: 20px 0 0 0;
+}
+
+.inputfiltro{  
+  padding:6px 15px 6px 15px;
+  margin:3px; 
+  background-color: #bdc3c7;
+  height: 40px;
+}
+
+hr.separador {
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,0.75), rgba(255,255,255,0)); 
+    background-image:    -moz-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,0.75), rgba(255,255,255,0)); 
+    background-image:     -ms-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,0.75), rgba(255,255,255,0)); 
+    background-image:      -o-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,0.75), rgba(255,255,255,0)); 
+}
+
+
+
+.fondoContactoCian{
+  width: 100%;
+    height: 580px;
+    background-image: url(../images/fondoCian.png);
+    background-position: 0px;
+    background-repeat: repeat;
+    -webkit-animation: fondo 20s infinite linear;
+       -moz-animation: fondo 20s infinite linear;
+         -o-animation: fondo 20s infinite linear;
+            animation: fondo 20s infinite linear;
+}
+
+
+.fondoContactoC{
+  width: 100%;
+   max-height: 700px;
+    background-image: url(../images/fondoCian.png);
+    background-position: 0px;
+    background-repeat: repeat;
+    -webkit-animation: fondo 20s infinite linear;
+       -moz-animation: fondo 20s infinite linear;
+         -o-animation: fondo 20s infinite linear;
+            animation: fondo 20s infinite linear;
+}
+
+.contactoBanner{
+  position: relative;
+  top: 80px;
+  margin: 0 auto;
+  width: 960px;
+  overflow: hidden;
+}
+
+.bannertitulo {
+  z-index: 100;
+  color: white;
+  font-family:"Raleway";
+  font-weight: 700; 
+  font-size: 33px;
+  position: absolute;
+  top: 390px;
+  left: 26px;
+}
+
+.bannertxt{
+  z-index: 100;
+  color: white;
+  font-family:"Dosis";
+  font-weight: 500; 
+  font-size: 30px;
+  position: absolute;
+  top: 440px;
+  left: 26px;
+}
+
+
+
+
+
+
+
+
+#columnas .izqda{
+ float: left; 
+}
+#columnas .centro{
+ float: right; 
+}
+#columnas .drcha{
+ float: right; 
+}
+
+.Ubi{
+ font-family: "Dosis";
+ text-align: center;
+ font-size: 33px;
+ font-weight: 700;
+ padding-top: 10px;
+ padding-bottom: 30px;
+ color: #737373;
+ text-shadow: -1px -1px rgba(255,255,255,0.7);   
+}
+
+.datosUsuario{
+  height: 40px;
+  width: 500px;
+  margin: 0 auto 20px auto;
+  font-family: "Raleway", Arial, serif;
+  font-weight: 500; 
+  font-size: 21px;
+}
+
+/* //////////////// PERFIL ////////////////////*/
+
+.fondoContactoVerde{
+  width: 100%;
+    height: 580px;
+    background-image: url(../images/fondoVerde.png);
+    background-position: 0px;
+    background-repeat: repeat;
+    -webkit-animation: fondo 20s infinite linear;
+       -moz-animation: fondo 20s infinite linear;
+         -o-animation: fondo 20s infinite linear;
+            animation: fondo 20s infinite linear;
+}
+
+.fondoContactoV{
+  width: 100%;
+    max-height: 700px;
+    background-image: url(../images/fondoVerde.png);
+    background-position: 0px;
+    background-repeat: repeat;
+    -webkit-animation: fondo 20s infinite linear;
+       -moz-animation: fondo 20s infinite linear;
+         -o-animation: fondo 20s infinite linear;
+            animation: fondo 20s infinite linear;
+}
