@@ -1,5 +1,7 @@
 <?php
  
+ob_start("ob_gzhandler");
+
 //Inicializar una sesion de PHP
 session_start();
  
@@ -20,7 +22,14 @@ session_start();
     	$username = $fila['usuario'];
 	}
  
-//Cerrrar conexion a la BD
+if(isset($_SESSION['carro'])) 
+  $carro=$_SESSION['carro'];else $carro=false; 
+  
+  //Sacar datos de la tabla de los productos
+  $query_productos = "SELECT *FROM tam.lista_carro WHERE 1 order by id";
+  $qry=mysql_query($query_productos);
+
+
 mysql_close($link);
 
 ?>
@@ -57,52 +66,9 @@ mysql_close($link);
 
 <!-- Sin inicio de sesión  -->
 
-<?php 
-		if (! (isset($_SESSION['user_id']))) {
-		?>
 
 
-    <div class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-          </button>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <a href="main.php"><img src="images/logo.png" width="140" height="68" alt="TAMCOT" class="pull-left logo"></a>
-            
-            <li class="active">
-              <a href="main.php">Inicio</a>
-            </li>
-           
-          </ul>
-        
-
-
-      <form class="navbar-form navbar-right">
-            <div class="form-group">  
-       <a href="registro.php">Log in</a>
-             </div>   
-
-      
-          </form>
-        </div>
-        <!--/.navbar-collapse -->
-      </div>
-    </div>
-
-
-
-<?php 
-		}
-		else { //con inicio de sesión
-		?>
-
-
-
-    <div class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -145,12 +111,10 @@ mysql_close($link);
         <!--/.navbar-collapse -->
       </div>
     </div>
+   
 
 
-
- <?php 
-		}
-		?>	
+ 
   
   <!-- CONTENIDO DEL SITIO -->
 <!-- Banner -->
@@ -343,33 +307,26 @@ mysql_close($link);
         <div class="col-xs-2">
           <h4 class="fecha">29/09/2014</h4>
           <h4 class="consola">Xbox360</h4>
-          <a href="#" class="carro">
-          <img src="images/adto.png" alt="añadir al carro">
-          </a>
+         
         </div>
         <div class="col-xs-2">
           <h4 class="fecha">29/09/2014</h4>
           <h4 class="consola">PS3</h4>
-          <a href="#" class="carro">
-          <img src="images/adto.png" alt="añadir al carro">
-          </a>
+         
         </div>
         <div class="col-xs-2">
           <h4 class="fecha">29/09/2014</h4>
           <h4 class="consola">Xbox360</h4>
-          <a href="#" class="carro">
-          <img src="images/adto.png" alt="añadir al carro"></a>
+        
         </div>
         <div class="col-xs-2">
           <h4 class="fecha">29/09/2014</h4>
-          <h4 class="consola">PS3</h4>
-           <img src="images/adto.png" alt="añadir al carro"></a>
+     
         </div>
         <div class="col-xs-2">
           <h4 class="fecha">29/09/2014</h4>
           <h4 class="consola">PC</h4>
-          <a href="#" class="carro">
-           <img src="images/adto.png" alt="añadir al carro"></a>
+        
         </div>
         </div>
         <div class="col-xs-1">
@@ -689,132 +646,71 @@ mysql_close($link);
 
   <div class= "Articulos">
     <div class="container">
-      <div class="row">
-        <div class="col-xs-1">
-        </div>
-        <a href="#">
-        <div class="col-xs-2">
-          <h3 class="tituloJuego">Watch Dogs</h2>
-        </div>
-        </a>
-        <a href="#">
-        <div class="col-xs-2">
-          <h3 class="tituloJuego">Call of Duty: Ghosts</h2>
-        </div>
-        </a>
-        <a href="#">
-        <div class="col-xs-2">
-          <h3 class="tituloJuego">Need for Speed: Rivals</h2>
-        </div>
-        </a>
-        <a href="#">
-        <div class="col-xs-2">
-          <h3 class="tituloJuego">XCOM: Enemy Within</h2>
-        </div>
-        </a>
-        <a href="#">
-        <div class="col-xs-2">
-          <h3 class="tituloJuego">Dragon Ball Z: Battle of Z</h2>
-        </div>
-        </a>
-        <div class="col-xs-1">
-        </div>
-     </div>
-     <div class="row">
-        <div class="col-xs-1 atras">
-          <a href="#"><img src="images/atras.png" width="40"></a>
-        </div>
-        <a href="#">
-        <div class="col-xs-2">
-          <img src="images/Prev1.jpg" width="140" height="200">
-        </div>
-        </a>
-        <a href="#">
-        <div class="col-xs-2">
-          <img src="images/Prev2.jpg" width="140" height="200">
-        </div>
-        </a>
-        <a href="#">
-        <div class="col-xs-2">
-          <img src="images/Prev3.jpg" width="140" height="200">
-        </div>
-        </a>
-        <a href="#">
-        <div class="col-xs-2">
-          <img src="images/Prev4.jpg" width="140" height="200">
-        </div>
-        </a>
-        <a href="#">
-        <div class="col-xs-2">
-          <img src="images/Prev5.jpg" width="140" height="200">
-        </div>
-        </a>
-        <div class="col-xs-1 siguiente">
-          <a href="#"><img src="images/siguiente.png" width="40"></a>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-1">
-        </div>
-        <div class="col-xs-2">
-          <h3 class="precio">$125.900</h3>
-        </div>
-        <div class="col-xs-2">
-          <h3 class="precio">$125.900</h3>
-        </div>
-        <div class="col-xs-2">
-          <h3 class="precio">$125.900</h3>
-        </div>
-        <div class="col-xs-2">
-          <h3 class="precio">$125.900</h3>
-        </div>
-        <div class="col-xs-2">
-          <h3 class="precio">$125.900</h3>
-        </div>
-        <div class="col-xs-1">
-        </div>
-     </div>
-     <div class="row">
-        <div class="col-xs-1">
-        </div>
-        <div class="col-xs-2">
-          <h4 class="fecha">29/09/2014</h4>
-          <h4 class="consola">Xbox360</h4>
-          <a href="#" class="carro">
-           <img src="images/adto.png" alt="añadir al carro"></a>
-        </div>
-        <div class="col-xs-2">
-          <h4 class="fecha">29/09/2014</h4>
-          <h4 class="consola">Xbox360</h4>
-          <a href="#" class="carro">
-           <img src="images/adto.png" alt="añadir al carro"></a>
-        </div>
-        <div class="col-xs-2">
-          <h4 class="fecha">29/09/2014</h4>
-          <h4 class="consola">PC</h4>
-          <a href="#" class="carro">
-           <img src="images/adto.png" alt="añadir al carro"></a>
-        </div>
-        <div class="col-xs-2">
-          <h4 class="fecha">29/09/2014</h4>
-          <h4 class="consola">PS3</h4>
-          <a href="#" class="carro">
-           <img src="images/adto.png" alt="añadir al carro"></a>
-        </div>
-        <div class="col-xs-2">
-          <h4 class="fecha">29/09/2014</h4>
-          <h4 class="consola">Xbox360</h4>
-          <a href="#" class="carro">
-           <img src="images/adto.png" alt="añadir al carro"></a>
-        </div>
-        <div class="col-xs-1">
-        </div>
-     </div>
-    </div>
-  </div>
+
+ <?php   //Basado en el tutorial  http://www.programacionweb.net/articulos/articulo/carro-de-compras-en-php/
+          while($row=mysql_fetch_assoc($qry))
+          $rows[] = $row;
+
+             $c = 0;
+             foreach( $rows as $row ):
+
+            $producto = stripslashes($row['producto']);
+            $precio = stripcslashes($row['precio']);
+            $url = stripslashes($row['url']);
+            $id = $row['id'];
+
+                //Needs Break Boolean, true if counter at second column
+                $b = (( ++$c % 5 == 0 ) ? true : false );
+
+                if ( $b ) 
+                    echo '<div class="row">';
+                  
+                    ?>
+
+                   <div class="col-md-3">
+              <figure>
+                  <img  src="<?php echo $url ?>" alt="Productos">
+                </figure>
+                <br />
+                <?php 
+
+//intento de maquetación de los productos con php
+              if(!$carro || !isset($carro[md5($row['id'])]['identificador']) || $carro[md5($row['id'])]['identificador']!=md5($row['id'])){ 
+
+              ?> 
+              <a href="agregarCarro.php?<?php echo SID ?>&id=<?php echo $row['id']; ?>"> 
+              <img class="agregarCarrito" src="images/adto.png" border="0" title="Agregar al Carrito"></a>
+
+              <?php 
+              } 
+              else {
+                ?>
+
+              <a href="borrarCarro.php?<?php echo SID ?>&id=<?php echo $row['id']; ?>"> 
+              <img class="agregarCarrito" src="images/adto2.png" border="0" title="Quitar del Carrito"></a>
+              <?php } 
+
+              ?>
+              <br />
+                <h5 class="precio">$<?php echo $precio ?></h5>
+                <br />
+                <a href="#"><?php echo $producto ?></a>
+                <br />
+                   </div>
+
+               <?php
+
+                if ( $b ) 
+                    echo '</div>';
+              endforeach;
+
+            ?>
 
 
   <a href="#" class="scrollup">Scroll</a>
+<!-- 
+//Espacio manual -->
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
 <!-- Footer -->

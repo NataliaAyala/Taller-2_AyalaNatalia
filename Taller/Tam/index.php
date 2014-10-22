@@ -3,7 +3,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Puse los links en este estilo (http://127.0.0.1/Tamcot/index.html) para que me funcionaran directamente desde el xammp -->
 
 
 <head>

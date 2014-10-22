@@ -9,11 +9,10 @@ $username = $_POST['username'];
 $pass1 = $_POST['pass1'];
 $pass2 = $_POST['pass2'];
 
-$query = sprintf("SELECT usuario FROM usuarios WHERE usuarios.usuario = '%s'", $username); // este query compara la informacion ingresada con la existente en la base de datos
+$query = sprintf("SELECT usuario FROM usuarios WHERE usuarios.usuario = '%s'", $username); 
 
 $result=mysql_query($query,$link);
 
-//el condicional dice que si existen tales filas con ese nombre entonces lanza el echo indicado "Los passwords deben coincidir"
 if(mysql_num_rows($result)){
 	echo "El usuario ya existe en la Base de Datos";
 } else {
@@ -23,11 +22,10 @@ if(mysql_num_rows($result)){
 	if($pass1!=$pass2) {
 		echo "Los passwords deben coincidir";
 	} else {
-
+//Realizado con Ayuda de Alejandra Soto
 		$query = sprintf("INSERT INTO usuarios (correo, usuario, password)
 		VALUES ('%s', '%s', '%s')", $email, $username, $pass1);
-    // $query = "INSERT INTO usuarios(usuario, correo, password) VALUES (".$username.",".$email.",".$pass1.")";
-
+  
 		$result=mysql_query($query,$link);
 
 		if(mysql_affected_rows()){
